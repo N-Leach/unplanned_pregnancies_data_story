@@ -1,3 +1,25 @@
 ---
 title: "Unplanned Pregnancies: Data Story"
 ---
+
+Percentage of women experiencing an unintended pregnancy during the first year of typical use and the first
+year of perfect use of contraception and the percentage continuing use at the end of the first year. United
+States.
+
+```{r}
+
+library(dplyr)
+
+# Create the data frame
+contraceptive_methods <- tibble(
+  Method = c("No method", "Spermicides", "Fertility awareness-based methods", "FA:Standard Days method", "FA:TwoDay method", "FA:Ovulation method", "FA:Symptothermal method", "Withdrawal", "Sponge (Parous women)", "Sponge (Nulliparous women)", "Condom (Female (fc))", "Condom (Male)", "Diaphragm", "Combined pill and progestin-only pill", "Evra patch", "NuvaRing", "Depo-Provera", "Intrauterine contraceptives (ParaGard)", "Intrauterine contraceptives (Mirena)", "Implanon", "Female sterilization", "Male sterilization"),
+  Typical_Use = c(85, 28, 24, NA, NA, NA, NA, 22, 24, 12, 21, 18, 12, 9, 9, 9, 6, 0.8, 0.2, 0.05, 0.5, 0.15),
+  Perfect_Use = c(85, 18, "NA", 5, 4, 3, 0.4, 4, 20, 9, 5, 2, 6, 0.3, 0.3, 0.3, 0.2, 0.6, 0.2, 0.05, 0.5, 0.10),
+  Continuation_One_Year = c("NA", 42, 47, "NA", "NA", "NA", "NA",46, 36, 36, 41, 43, 57, 67, 67, 67, 56, 78, 80, 84, 100, 100)
+)
+
+
+
+```
+
+**How the numbers were calculated: The probability that a woman doesn't get pregnant at all over a given period of time is equal to the success rate of her contraceptive method, raised to the power of the number of years she uses that method.**
